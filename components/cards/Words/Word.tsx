@@ -41,7 +41,7 @@ export const WordsCardWord = ({ letters, word }: WordsCardWordProps) => {
       <Card.Divider />
 
       <Card.Block
-        className="flex-1 flex-wrap items-center justify-center gap-8"
+        className="flex-1 flex-wrap content-center items-center justify-center gap-8"
         role="presentation"
       >
         {word.split(/\s/g).map((part, partIndex) => (
