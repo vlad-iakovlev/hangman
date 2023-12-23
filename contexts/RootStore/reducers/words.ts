@@ -6,13 +6,18 @@ const createWordReducer: React.Reducer<
   {
     type: WordsActionTypes.CREATE_WORD
     payload: {
+      wordId: string
       letters: string
       word: string
     }
   }
-> = (state, { payload: { letters, word } }) => {
+> = (state, { payload: { wordId, letters, word } }) => {
   return produce(state, (draft) => {
-    draft.words.push({ letters, word })
+    draft.words.push({
+      id: wordId,
+      letters,
+      word,
+    })
   })
 }
 

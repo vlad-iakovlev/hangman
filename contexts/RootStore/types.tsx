@@ -1,5 +1,6 @@
 export interface RootStoreState {
   words: {
+    id: string
     letters: string
     word: string
   }[]
@@ -7,6 +8,7 @@ export interface RootStoreState {
 
 export interface BrowserStorageState {
   words: {
+    id: string
     letters: string
     word: string
   }[]
