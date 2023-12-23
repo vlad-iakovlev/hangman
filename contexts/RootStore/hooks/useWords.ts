@@ -10,20 +10,27 @@ export const useWords = () => {
 
   const createWord = React.useCallback(
     ({ letters, word }: { letters: string; word: string }) => {
-      const wordId = uuid()
+      const id = uuid()
 
       dispatch({
         type: WordsActionTypes.CREATE_WORD,
-        payload: { wordId, letters, word },
+        payload: { id, letters, word },
       })
 
-      return wordId
+      return id
     },
     [dispatch],
   )
 
+  const resetWords = React.useCallback(() => {
+    dispatch({
+      type: WordsActionTypes.RESET_WORDS,
+    })
+  }, [dispatch])
+
   return {
     words,
     createWord,
+    resetWords,
   }
 }

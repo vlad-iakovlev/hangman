@@ -3,7 +3,6 @@ import {
   RootStoreState,
   StorageActionType,
 } from '../types.jsx'
-import { getEmptyState } from '../utils.js'
 
 const setStateFromBrowserStorageReducer: React.Reducer<
   RootStoreState,
@@ -19,14 +18,9 @@ const setStateFromBrowserStorageReducer: React.Reducer<
   }
 }
 
-const resetStateReducer: React.Reducer<
-  RootStoreState,
-  { type: StorageActionType.RESET_STATE }
-> = () => getEmptyState()
-
-export type StorageAction =
-  | React.ReducerAction<typeof setStateFromBrowserStorageReducer>
-  | React.ReducerAction<typeof resetStateReducer>
+export type StorageAction = React.ReducerAction<
+  typeof setStateFromBrowserStorageReducer
+>
 
 export const isStorageAction = (action: {
   type: string
@@ -44,8 +38,5 @@ export const storageReducer: React.Reducer<RootStoreState, StorageAction> = (
   switch (action.type) {
     case StorageActionType.SET_STATE_FROM_BROWSER_STORAGE:
       return setStateFromBrowserStorageReducer(state, action)
-
-    case StorageActionType.RESET_STATE:
-      return resetStateReducer(state, action)
   }
 }

@@ -1,24 +1,18 @@
+import { Word } from '../../types/word.js'
+
 export interface RootStoreState {
-  words: {
-    id: string
-    letters: string
-    word: string
-  }[]
+  words: Word[]
 }
 
 export interface BrowserStorageState {
-  words: {
-    id: string
-    letters: string
-    word: string
-  }[]
+  words: Word[]
 }
 
 export enum StorageActionType {
   SET_STATE_FROM_BROWSER_STORAGE = 'SET_STATE_FROM_BROWSER_STORAGE',
-  RESET_STATE = 'RESET_STATE',
 }
 
 export enum WordsActionTypes {
   CREATE_WORD = 'CREATE_WORD',
+  RESET_WORDS = 'RESET_WORDS',
 }

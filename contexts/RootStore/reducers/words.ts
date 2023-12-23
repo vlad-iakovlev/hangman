@@ -1,27 +1,33 @@
 import { produce } from 'immer'
+import { Word } from '../../../types/word.js'
 import { RootStoreState, WordsActionTypes } from '../types.jsx'
 
 const createWordReducer: React.Reducer<
   RootStoreState,
   {
     type: WordsActionTypes.CREATE_WORD
-    payload: {
-      wordId: string
-      letters: string
-      word: string
-    }
+    payload: Word
   }
-> = (state, { payload: { wordId, letters, word } }) => {
+> = (state, { payload }) => {
   return produce(state, (draft) => {
-    draft.words.push({
-      id: wordId,
-      letters,
-      word,
-    })
+    draft.words.push(payload)
   })
 }
 
-export type WordsActions = React.ReducerAction<typeof createWordReducer>
+const resetWordsReducer: React.Reducer<
+  RootStoreState,
+  {
+    type: WordsActionTypes.RESET_WORDS
+  }
+> = (state) => {
+  return produce(state, (draft) => {
+    draft.words = []
+  })
+}
+
+export type WordsActions =
+  | React.ReducerAction<typeof createWordReducer>
+  | React.ReducerAction<typeof resetWordsReducer>
 
 export const isWordsAction = (action: {
   type: string
@@ -39,5 +45,8 @@ export const wordsReducer: React.Reducer<RootStoreState, WordsActions> = (
   switch (action.type) {
     case WordsActionTypes.CREATE_WORD:
       return createWordReducer(state, action)
+
+    case WordsActionTypes.RESET_WORDS:
+      return resetWordsReducer(state, action)
   }
 }

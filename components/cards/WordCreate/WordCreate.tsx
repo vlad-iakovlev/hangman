@@ -17,19 +17,18 @@ export const WordCreateCard = ({
   const [letters, setLetters] = React.useState<string>(DEFAULT_LETTERS)
   const [word, setWord] = React.useState<string>('')
 
-  const isValid = React.useMemo(() => {
-    if (!letters || !word) return false
-
-    return (
-      letters === letters.replace(/\s/g, '') &&
+  const handleCreate = React.useCallback(() => {
+    if (
+      letters !== letters.replace(/\s/g, '') ||
+      !word ||
       word
         .replace(/\s/g, '')
         .split('')
-        .every((letter) => letters.includes(letter))
-    )
-  }, [letters, word])
+        .some((letter) => !letters.includes(letter))
+    ) {
+      return
+    }
 
-  const handleCreate = React.useCallback(() => {
     onCreate({ letters, word })
   }, [letters, word, onCreate])
 
@@ -42,12 +41,7 @@ export const WordCreateCard = ({
       <Card.Divider />
 
       <Card.Footer>
-        <Button
-          disabled={!isValid}
-          theme={isValid ? 'green' : 'white'}
-          size="md"
-          onClick={handleCreate}
-        >
+        <Button theme="green" size="md" onClick={handleCreate}>
           Create
         </Button>
 
