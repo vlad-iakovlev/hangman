@@ -15,7 +15,11 @@ export const WordsCardWord = ({ letters, word }: WordsCardWordProps) => {
   )
 
   const handleLetterClick = React.useCallback((letter: string) => {
-    setLettersMap((prev) => new Map(prev.set(letter, true)))
+    setLettersMap((prev) => {
+      const next = new Map(prev)
+      next.set(letter, !next.get(letter))
+      return next
+    })
   }, [])
 
   return (
@@ -25,7 +29,6 @@ export const WordsCardWord = ({ letters, word }: WordsCardWordProps) => {
           <Button
             key={letter}
             className="px-0"
-            disabled={isOpen}
             size="md"
             theme={isOpen ? (word.includes(letter) ? 'green' : 'red') : 'white'}
             onClick={() => handleLetterClick(letter)}
