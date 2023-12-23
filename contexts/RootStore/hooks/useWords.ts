@@ -5,13 +5,13 @@ import { WordsActionTypes } from '../types.jsx'
 export const useGroups = () => {
   const { state, dispatch } = useRootStore()
 
-  const words = useMemo<string[]>(() => state.words, [state])
+  const words = useMemo(() => state.words, [state])
 
   const createWord = useCallback(
-    (word: string) => {
+    ({ letters, word }: { letters: string; word: string }) => {
       dispatch({
         type: WordsActionTypes.CREATE_WORD,
-        payload: word,
+        payload: { letters, word },
       })
     },
     [dispatch],
@@ -19,6 +19,6 @@ export const useGroups = () => {
 
   return {
     words,
-    createGroup: createWord,
+    createWord,
   }
 }

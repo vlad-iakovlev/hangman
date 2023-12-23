@@ -5,11 +5,14 @@ const createWordReducer: React.Reducer<
   RootStoreState,
   {
     type: WordsActionTypes.CREATE_WORD
-    payload: string
+    payload: {
+      letters: string
+      word: string
+    }
   }
-> = (state, { payload }) => {
+> = (state, { payload: { letters, word } }) => {
   return produce(state, (draft) => {
-    draft.words.push(payload)
+    draft.words.push({ letters, word })
   })
 }
 

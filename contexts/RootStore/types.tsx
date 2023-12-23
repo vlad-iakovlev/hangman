@@ -1,9 +1,15 @@
 export interface RootStoreState {
-  words: string[]
+  words: {
+    letters: string
+    word: string
+  }[]
 }
 
 export interface BrowserStorageState {
-  words: string[]
+  words: {
+    letters: string
+    word: string
+  }[]
 }
 
 export enum StorageActionType {
