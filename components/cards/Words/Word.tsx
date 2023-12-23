@@ -51,7 +51,12 @@ export const WordsCardWord = ({ letters, word }: WordsCardWordProps) => {
                 className="border-b-4 border-b-green-700 pb-1"
                 key={letterIndex}
               >
-                <Button className="flex px-0" theme="white" size="md" disabled>
+                <Button
+                  className="flex px-0 text-2xl"
+                  theme="white"
+                  size="lg"
+                  disabled
+                >
                   {lettersMap.get(letter) ? letter : ''}
                 </Button>
               </div>

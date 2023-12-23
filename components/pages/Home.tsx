@@ -16,7 +16,7 @@ export const Home = () => {
       <Container className="flex min-h-screen items-center justify-center py-4 sm:py-6 md:py-8">
         {words.length ? (
           <WordsCard
-            className="min-w-0 flex-1"
+            className="min-w-0 flex-1 self-stretch"
             words={words}
             onCreate={createWord}
             onReset={resetWords}

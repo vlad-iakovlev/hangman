@@ -44,7 +44,7 @@ export const WordsCard = ({
   }, [])
 
   return (
-    <Card className={className}>
+    <Card className={twMerge('flex flex-col', className)}>
       <Card.Block role="presentation">
         <Button
           className={twMerge(
