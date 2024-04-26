@@ -21,7 +21,7 @@
     "framer-motion": "^11.1.7",
     "immer": "^10.0.4",
     "next": "^14.2.2",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.3.0",
     "uuid": "^9.0.1"
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.79",
+    "@types/react": "^18.3.0",
     "@types/react-dom": "^18.2.25",
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
