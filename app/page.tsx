@@ -4,10 +4,9 @@ import { WordCreateCard } from '../components/cards/WordCreate/WordCreate.jsx'
 import { WordsCard } from '../components/cards/Words/Words.jsx'
 import { Page } from '../components/layout/Page.jsx'
 import { Container } from '../components/ui-kit/Container/Container.jsx'
-import { RootStoreProvider } from '../contexts/RootStore/RootStore.jsx'
 import { useWords } from '../contexts/RootStore/hooks/useWords.js'
 
-const HomePage = () => {
+export default function HomePage() {
   const { words, createWord, resetWords } = useWords()
 
   return (
@@ -28,13 +27,5 @@ const HomePage = () => {
         )}
       </Container>
     </Page>
-  )
-}
-
-export default function WrappedPage() {
-  return (
-    <RootStoreProvider>
-      <HomePage />
-    </RootStoreProvider>
   )
 }

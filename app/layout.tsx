@@ -1,4 +1,5 @@
 import { Metadata, Viewport } from 'next'
+import { ClientRoot } from '../components/layout/ClientRoot.jsx'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className="text-primary bg-primary touch-pan-y select-none overscroll-none [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none]">
-        {children}
+        <ClientRoot>{children}</ClientRoot>
       </body>
     </html>
   )

@@ -1,10 +1,8 @@
-'use client'
-
 import { ArrowPathIcon } from '@heroicons/react/24/outline'
 import React from 'react'
-import { Card } from '../components/ui-kit/Card/Card.jsx'
+import { Card } from '../ui-kit/Card/Card.jsx'
 
-export default function ErrorPage() {
+export const Fallback = () => {
   const handleRestart = React.useCallback(() => {
     window.location.href = '/'
   }, [])
