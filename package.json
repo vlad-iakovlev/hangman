@@ -19,7 +19,7 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@types/uuid": "^10.0.0",
-    "default-import": "^1.1.7",
+    "default-import": "^2.0.1",
     "focus-trap-react": "^10.2.3",
     "framer-motion": "^11.5.0",
     "immer": "^10.1.1",
