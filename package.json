@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@types/node": "^18.19.112",
+    "@types/node": "^18.19.113",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "default-import": "^1.1.7",
