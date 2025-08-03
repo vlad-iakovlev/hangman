@@ -51,7 +51,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className="text-primary-foreground bg-primary-background touch-pan-y overscroll-none select-none [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none]">
+      <body className="touch-pan-y overscroll-none bg-primary-background text-primary-foreground select-none [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none]">
         <ClientRoot>{children}</ClientRoot>
       </body>
     </html>

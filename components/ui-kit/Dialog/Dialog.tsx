@@ -69,7 +69,7 @@ export const Dialog = ({ isOpen, children, onClose }: DialogProps) => {
             <div className="flex min-h-full items-end justify-center overflow-y-auto pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] sm:items-center">
               <FocusTrap>
                 <motion.div
-                  className="bg-secondary-background relative m-4 w-full max-w-lg overflow-hidden rounded-lg shadow-xl sm:my-8"
+                  className="relative m-4 w-full max-w-lg overflow-hidden rounded-lg bg-secondary-background shadow-xl sm:my-8"
                   initial="closed"
                   animate="opened"
                   exit="closed"
