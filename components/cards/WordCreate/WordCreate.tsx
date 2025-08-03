@@ -1,7 +1,7 @@
 import React from 'react'
-import { DEFAULT_LETTERS } from '../../../constants/letters.js'
-import { Button } from '../../ui-kit/Button/Button.jsx'
-import { Card } from '../../ui-kit/Card/Card.jsx'
+import { DEFAULT_LETTERS } from '../../../constants/letters'
+import { Button } from '../../ui-kit/Button/Button'
+import { Card } from '../../ui-kit/Card/Card'
 
 interface WordCreateCardProps {
   className?: string

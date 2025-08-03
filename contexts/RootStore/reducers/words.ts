@@ -1,6 +1,6 @@
 import { produce } from 'immer'
-import { Word } from '../../../types/word.js'
-import { RootStoreState, WordsActionTypes } from '../types.jsx'
+import { Word } from '../../../types/word'
+import { RootStoreState, WordsActionTypes } from '../types'
 
 const createWordReducer: React.Reducer<
   RootStoreState,
@@ -26,8 +26,8 @@ const resetWordsReducer: React.Reducer<
 }
 
 export type WordsActions =
-  | React.ReducerAction<typeof createWordReducer>
-  | React.ReducerAction<typeof resetWordsReducer>
+  | Parameters<typeof createWordReducer>[1]
+  | Parameters<typeof resetWordsReducer>[1]
 
 export const isWordsAction = (action: {
   type: string

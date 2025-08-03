@@ -1,8 +1,8 @@
-import { StorageAction } from '../../reducers/storage.js'
-import { RootStoreState } from '../../types.jsx'
-import { useCleanupOldLocalStorageVersions } from './useCleanupOldLocalStorageVersions.js'
-import { useLoadStateFromLocalStorage } from './useLoadStateFromLocalStorage.js'
-import { useSaveStateToLocalStorage } from './useSaveStateToLocalStorage.js'
+import { StorageAction } from '../../reducers/storage'
+import { RootStoreState } from '../../types'
+import { useCleanupOldLocalStorageVersions } from './useCleanupOldLocalStorageVersions'
+import { useLoadStateFromLocalStorage } from './useLoadStateFromLocalStorage'
+import { useSaveStateToLocalStorage } from './useSaveStateToLocalStorage'
 
 export const useStorage = (
   state: RootStoreState,

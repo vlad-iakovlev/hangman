@@ -1,6 +1,6 @@
 import { ArrowPathIcon } from '@heroicons/react/24/outline'
 import React from 'react'
-import { Card } from '../ui-kit/Card/Card.jsx'
+import { Card } from '../ui-kit/Card/Card'
 
 export const Fallback = () => {
   const handleRestart = React.useCallback(() => {

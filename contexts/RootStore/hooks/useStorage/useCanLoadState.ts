@@ -1,4 +1,4 @@
-import { useIsTabVisible } from '../../../../hooks/useIsTabVisible.js'
+import { useIsTabVisible } from '../../../../hooks/useIsTabVisible'
 
 export const useCanLoadState = () => {
   const isTabVisible = useIsTabVisible()

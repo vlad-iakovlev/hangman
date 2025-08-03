@@ -1,12 +1,12 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
-import { Word } from '../../../types/word.js'
-import { Button } from '../../ui-kit/Button/Button.jsx'
-import { Card } from '../../ui-kit/Card/Card.jsx'
-import { WordsCardCreate } from './Create.jsx'
-import { WordsCardReset } from './Reset.jsx'
-import { WordsCardWord } from './Word.jsx'
+import { Word } from '../../../types/word'
+import { Button } from '../../ui-kit/Button/Button'
+import { Card } from '../../ui-kit/Card/Card'
+import { WordsCardCreate } from './Create'
+import { WordsCardReset } from './Reset'
+import { WordsCardWord } from './Word'
 
 interface WordsCardProps {
   className?: string

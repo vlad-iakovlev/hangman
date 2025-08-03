@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 as uuid } from 'uuid'
-import { useRootStore } from '../RootStore.jsx'
-import { WordsActionTypes } from '../types.jsx'
+import { useRootStore } from '../RootStore'
+import { WordsActionTypes } from '../types'
 
 export const useWords = () => {
   const { state, dispatch } = useRootStore()

@@ -1,5 +1,5 @@
-import { Modify } from '../../../types/utility.js'
-import { CardBlock, CardBlockProps } from './CardBlock.jsx'
+import { Modify } from '../../../types/utility'
+import { CardBlock, CardBlockProps } from './CardBlock'
 
 export type CardTitleProps = Modify<
   CardBlockProps,

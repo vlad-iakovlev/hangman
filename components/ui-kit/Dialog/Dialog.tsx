@@ -1,7 +1,7 @@
 import { FocusTrap } from 'focus-trap-react'
 import { AnimatePresence, Variants, motion } from 'framer-motion'
 import React from 'react'
-import { Portal } from '../Portal/Portal.jsx'
+import { Portal } from '../Portal/Portal'
 
 const rootVariants: Variants = {
   opened: {

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../../ui-kit/Button/Button.jsx'
-import { ConfirmDialog } from '../../ui-kit/ConfirmDialog/ConfirmDialog.jsx'
+import { Button } from '../../ui-kit/Button/Button'
+import { ConfirmDialog } from '../../ui-kit/ConfirmDialog/ConfirmDialog'
 
 interface WordsCardResetProps {
   onReset: () => void

@@ -1,12 +1,12 @@
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
-import { CardBlock } from './CardBlock.jsx'
-import { CardDivider } from './CardDivider.jsx'
-import { CardFooter } from './CardFooter.jsx'
-import { CardInput } from './CardInput.jsx'
-import { CardItem } from './CardItem.jsx'
-import { CardLink } from './CardLink.jsx'
-import { CardTitle } from './CardTitle.jsx'
+import { CardBlock } from './CardBlock'
+import { CardDivider } from './CardDivider'
+import { CardFooter } from './CardFooter'
+import { CardInput } from './CardInput'
+import { CardItem } from './CardItem'
+import { CardLink } from './CardLink'
+import { CardTitle } from './CardTitle'
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement>
 
@@ -47,22 +47,22 @@ export const Card = ({
   )
 }
 
-export * from './CardBlock.jsx'
+export * from './CardBlock'
 Card.Block = CardBlock
 
 Card.Divider = CardDivider
 
-export type * from './CardFooter.jsx'
+export type * from './CardFooter'
 Card.Footer = CardFooter
 
-export type * from './CardInput.jsx'
+export type * from './CardInput'
 Card.Input = CardInput
 
-export type * from './CardItem.jsx'
+export type * from './CardItem'
 Card.Item = CardItem
 
-export type * from './CardLink.jsx'
+export type * from './CardLink'
 Card.Link = CardLink
 
-export type * from './CardTitle.jsx'
+export type * from './CardTitle'
 Card.Title = CardTitle

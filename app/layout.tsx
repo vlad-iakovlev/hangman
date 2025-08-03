@@ -1,5 +1,5 @@
 import { Metadata, Viewport } from 'next'
-import { ClientRoot } from '../components/layout/ClientRoot.jsx'
+import { ClientRoot } from '../components/layout/ClientRoot'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {

@@ -2,7 +2,7 @@ import {
   BrowserStorageState,
   RootStoreState,
   StorageActionType,
-} from '../types.jsx'
+} from '../types'
 
 const setStateFromBrowserStorageReducer: React.Reducer<
   RootStoreState,
@@ -18,9 +18,9 @@ const setStateFromBrowserStorageReducer: React.Reducer<
   }
 }
 
-export type StorageAction = React.ReducerAction<
+export type StorageAction = Parameters<
   typeof setStateFromBrowserStorageReducer
->
+>[1]
 
 export const isStorageAction = (action: {
   type: string

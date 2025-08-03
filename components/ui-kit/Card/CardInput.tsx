@@ -1,7 +1,7 @@
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
-import { Modify } from '../../../types/utility.js'
-import { CardItem, CardItemProps } from './CardItem.jsx'
+import { Modify } from '../../../types/utility'
+import { CardItem, CardItemProps } from './CardItem'
 
 export type CardInputProps = Modify<
   CardItemProps,

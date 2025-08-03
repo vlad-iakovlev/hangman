@@ -1,10 +1,10 @@
 'use client'
 
-import { WordCreateCard } from '../components/cards/WordCreate/WordCreate.jsx'
-import { WordsCard } from '../components/cards/Words/Words.jsx'
-import { Page } from '../components/layout/Page.jsx'
-import { Container } from '../components/ui-kit/Container/Container.jsx'
-import { useWords } from '../contexts/RootStore/hooks/useWords.js'
+import { WordCreateCard } from '../components/cards/WordCreate/WordCreate'
+import { WordsCard } from '../components/cards/Words/Words'
+import { Page } from '../components/layout/Page'
+import { Container } from '../components/ui-kit/Container/Container'
+import { useWords } from '../contexts/RootStore/hooks/useWords'
 
 export default function HomePage() {
   const { words, createWord, resetWords } = useWords()
@@ -21,7 +21,7 @@ export default function HomePage() {
           />
         ) : (
           <WordCreateCard
-            className="min-w-0 max-w-lg flex-1"
+            className="max-w-lg min-w-0 flex-1"
             onCreate={createWord}
           />
         )}

@@ -1,4 +1,4 @@
-import { RootStoreState } from './types.jsx'
+import { RootStoreState } from './types'
 
 export const getEmptyState = (): RootStoreState => ({
   words: [],

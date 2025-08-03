@@ -1,4 +1,4 @@
-import { Word } from '../../types/word.js'
+import { Word } from '../../types/word'
 
 export interface RootStoreState {
   words: Word[]

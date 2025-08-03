@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../../ui-kit/Button/Button.jsx'
-import { Card } from '../../ui-kit/Card/Card.jsx'
+import { Button } from '../../ui-kit/Button/Button'
+import { Card } from '../../ui-kit/Card/Card'
 
 interface WordsCardWordProps {
   letters: string

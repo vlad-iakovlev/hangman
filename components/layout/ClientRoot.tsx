@@ -1,8 +1,8 @@
 'use client'
 
-import { RootStoreProvider } from '../../contexts/RootStore/RootStore.jsx'
-import { ErrorBoundary } from '../misc/ErrorBoundary.jsx'
-import { Fallback } from '../pages/Fallback.jsx'
+import { RootStoreProvider } from '../../contexts/RootStore/RootStore'
+import { ErrorBoundary } from '../misc/ErrorBoundary'
+import { Fallback } from '../pages/Fallback'
 
 interface ClientRootProps {
   children: React.ReactNode

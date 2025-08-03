@@ -1,14 +1,14 @@
 import assert from 'assert'
 import React from 'react'
-import { useStorage } from './hooks/useStorage/useStorage.js'
+import { useStorage } from './hooks/useStorage/useStorage'
 import {
   StorageAction,
   isStorageAction,
   storageReducer,
-} from './reducers/storage.js'
-import { WordsActions, isWordsAction, wordsReducer } from './reducers/words.js'
-import { RootStoreState } from './types.jsx'
-import { getEmptyState } from './utils.js'
+} from './reducers/storage'
+import { WordsActions, isWordsAction, wordsReducer } from './reducers/words'
+import { RootStoreState } from './types'
+import { getEmptyState } from './utils'
 
 type Action = StorageAction | WordsActions
 

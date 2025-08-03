@@ -1,4 +1,4 @@
-import { BrowserStorageState, RootStoreState } from '../types.jsx'
+import { BrowserStorageState, RootStoreState } from '../types'
 
 export const getBrowserStorageState = (
   state: RootStoreState,

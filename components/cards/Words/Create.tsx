@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from '../../ui-kit/Button/Button.jsx'
-import { Dialog } from '../../ui-kit/Dialog/Dialog.jsx'
-import { WordCreateCard } from '../WordCreate/WordCreate.jsx'
+import { Button } from '../../ui-kit/Button/Button'
+import { Dialog } from '../../ui-kit/Dialog/Dialog'
+import { WordCreateCard } from '../WordCreate/WordCreate'
 
 interface WordsCardCreateProps {
   onCreate: (params: { letters: string; word: string }) => void
