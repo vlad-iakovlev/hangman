@@ -9,7 +9,7 @@ export const CardBlock = React.forwardRef<HTMLDivElement, CardBlockProps>(
       <div
         ref={ref}
         className={twMerge(
-          'bg-secondary relative flex min-h-12 items-center gap-3 px-4 py-2 transition-colors sm:px-6',
+          'bg-secondary-background relative flex min-h-12 items-center gap-3 px-4 py-2 transition-colors sm:px-6',
           className,
         )}
         role="listitem"

@@ -9,7 +9,7 @@ export const Container = ({ children, className }: ContainerProps) => {
   return (
     <div
       className={twMerge(
-        'mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-8',
+        'mx-auto max-w-(--breakpoint-2xl) px-4 sm:px-6 md:px-8',
         className,
       )}
     >

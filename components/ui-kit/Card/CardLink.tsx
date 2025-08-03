@@ -23,7 +23,7 @@ export const CardLink = ({
   ...rest
 }: CardLinkProps) => (
   <NextLink
-    className="bg-secondary flex min-h-12 w-full items-center gap-3 px-4 py-2 text-left transition-colors hover:bg-tertiary active:bg-tertiary sm:px-6"
+    className="bg-secondary-background hover:bg-tertiary-background active:bg-tertiary-background flex min-h-12 w-full items-center gap-3 px-4 py-2 text-left transition-colors sm:px-6"
     href={{ pathname: href, query: { animation: 'forward' } }}
     as={href}
     role="listitem"

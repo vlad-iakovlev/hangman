@@ -80,7 +80,7 @@ export const CardInput = ({
       value={
         isEditing ? (
           <input
-            className="w-full bg-transparent text-right focus:outline-none"
+            className="w-full bg-transparent text-right focus:outline-hidden"
             autoFocus
             value={inputValue}
             onChange={handleInputChange}

@@ -59,7 +59,7 @@ export const WordsCard = ({
           onClick={handlePrev}
         />
 
-        <h2 className="text-secondary min-w-0 flex-1 truncate text-center text-xl font-semibold leading-6">
+        <h2 className="text-secondary-foreground min-w-0 flex-1 truncate text-center text-xl leading-6 font-semibold">
           Word #{currentIndex + 1}
         </h2>
 
