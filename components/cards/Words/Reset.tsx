@@ -1,19 +1,19 @@
-import React from 'react'
+import { useCallback, useState } from 'react'
 import { Button } from '../../ui-kit/Button/Button'
 import { ConfirmDialog } from '../../ui-kit/ConfirmDialog/ConfirmDialog'
 
-interface WordsCardResetProps {
+type WordsCardResetProps = {
   onReset: () => void
 }
 
 export const WordsCardReset = ({ onReset }: WordsCardResetProps) => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const handleClick = React.useCallback(() => {
+  const handleClick = useCallback(() => {
     setIsOpen(true)
   }, [])
 
-  const handleClose = React.useCallback(() => {
+  const handleClose = useCallback(() => {
     setIsOpen(false)
   }, [])
 

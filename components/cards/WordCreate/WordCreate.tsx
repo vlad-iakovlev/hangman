@@ -1,9 +1,9 @@
-import React from 'react'
+import { useCallback, useState } from 'react'
 import { DEFAULT_LETTERS } from '../../../constants/letters'
 import { Button } from '../../ui-kit/Button/Button'
 import { Card } from '../../ui-kit/Card/Card'
 
-interface WordCreateCardProps {
+type WordCreateCardProps = {
   className?: string
   onCreate: (params: { letters: string; word: string }) => void
   onCancel?: () => void
@@ -14,10 +14,10 @@ export const WordCreateCard = ({
   onCreate,
   onCancel,
 }: WordCreateCardProps) => {
-  const [letters, setLetters] = React.useState<string>(DEFAULT_LETTERS)
-  const [word, setWord] = React.useState<string>('')
+  const [letters, setLetters] = useState<string>(DEFAULT_LETTERS)
+  const [word, setWord] = useState<string>('')
 
-  const handleCreate = React.useCallback(() => {
+  const handleCreate = useCallback(() => {
     if (
       letters !== letters.replace(/\s/g, '') ||
       !word ||

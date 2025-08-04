@@ -1,20 +1,20 @@
-import React from 'react'
+import { useCallback, useState } from 'react'
 import { Button } from '../../ui-kit/Button/Button'
 import { Dialog } from '../../ui-kit/Dialog/Dialog'
 import { WordCreateCard } from '../WordCreate/WordCreate'
 
-interface WordsCardCreateProps {
+type WordsCardCreateProps = {
   onCreate: (params: { letters: string; word: string }) => void
 }
 
 export const WordsCardCreate = ({ onCreate }: WordsCardCreateProps) => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const handleClick = React.useCallback(() => {
+  const handleClick = useCallback(() => {
     setIsOpen(true)
   }, [])
 
-  const handleCreate = React.useCallback(
+  const handleCreate = useCallback(
     (params: { letters: string; word: string }) => {
       onCreate(params)
       setIsOpen(false)
@@ -22,7 +22,7 @@ export const WordsCardCreate = ({ onCreate }: WordsCardCreateProps) => {
     [onCreate],
   )
 
-  const handleClose = React.useCallback(() => {
+  const handleClose = useCallback(() => {
     setIsOpen(false)
   }, [])
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useCallback } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { CardBlock } from './CardBlock'
 import { CardDivider } from './CardDivider'
@@ -8,7 +8,7 @@ import { CardItem } from './CardItem'
 import { CardLink } from './CardLink'
 import { CardTitle } from './CardTitle'
 
-export type CardProps = React.HTMLAttributes<HTMLDivElement>
+export type CardProps = React.ComponentProps<'div'>
 
 export const Card = ({
   className,
@@ -17,7 +17,7 @@ export const Card = ({
   onKeyDown,
   ...rest
 }: CardProps) => {
-  const handleKeyDown = React.useCallback(
+  const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (onClick && (event.key === 'Enter' || event.key === ' ')) {
         event.preventDefault()

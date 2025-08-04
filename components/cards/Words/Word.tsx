@@ -1,20 +1,20 @@
-import React from 'react'
+import { useCallback, useState } from 'react'
 import { Button } from '../../ui-kit/Button/Button'
 import { Card } from '../../ui-kit/Card/Card'
 
-interface WordsCardWordProps {
+type WordsCardWordProps = {
   letters: string
   word: string
 }
 
 export const WordsCardWord = ({ letters, word }: WordsCardWordProps) => {
-  const [lettersMap, setLettersMap] = React.useState(
+  const [lettersMap, setLettersMap] = useState(
     new Map<string, boolean>(
       letters.split('').map<[string, boolean]>((letter) => [letter, false]),
     ),
   )
 
-  const handleLetterClick = React.useCallback((letter: string) => {
+  const handleLetterClick = useCallback((letter: string) => {
     setLettersMap((prev) => {
       const next = new Map(prev)
       next.set(letter, !next.get(letter))
@@ -31,7 +31,9 @@ export const WordsCardWord = ({ letters, word }: WordsCardWordProps) => {
             className="px-0"
             size="md"
             theme={isOpen ? (word.includes(letter) ? 'green' : 'red') : 'white'}
-            onClick={() => handleLetterClick(letter)}
+            onClick={() => {
+              handleLetterClick(letter)
+            }}
           >
             {letter}
           </Button>

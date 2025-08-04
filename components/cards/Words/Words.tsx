@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
-import React from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { Word } from '../../../types/word'
 import { Button } from '../../ui-kit/Button/Button'
@@ -8,7 +8,7 @@ import { WordsCardCreate } from './Create'
 import { WordsCardReset } from './Reset'
 import { WordsCardWord } from './Word'
 
-interface WordsCardProps {
+type WordsCardProps = {
   className?: string
   words: Word[]
   onCreate: (params: { letters: string; word: string }) => void
@@ -21,25 +21,25 @@ export const WordsCard = ({
   onCreate,
   onReset,
 }: WordsCardProps) => {
-  const [currentIndex, setCurrentIndex] = React.useState<number>(0)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
 
-  const currentWord = React.useMemo<Word | undefined>(
+  const currentWord = useMemo<Word | undefined>(
     () => words[currentIndex],
     [currentIndex, words],
   )
 
-  const canPrev = React.useMemo(() => currentIndex > 0, [currentIndex])
+  const canPrev = useMemo(() => currentIndex > 0, [currentIndex])
 
-  const canNext = React.useMemo(
+  const canNext = useMemo(
     () => currentIndex < words.length - 1,
     [currentIndex, words],
   )
 
-  const handlePrev = React.useCallback(() => {
+  const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => prev - 1)
   }, [])
 
-  const handleNext = React.useCallback(() => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prev) => prev + 1)
   }, [])
 

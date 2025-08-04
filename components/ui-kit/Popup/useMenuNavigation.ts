@@ -1,6 +1,6 @@
-import React from 'react'
+import { useEffect } from 'react'
 
-interface UseMenuNavigationProps {
+type UseMenuNavigationProps = {
   popupRef: React.RefObject<HTMLElement | null>
   isOpen: boolean
   onClose?: () => void
@@ -11,7 +11,7 @@ export const useMenuNavigation = ({
   isOpen,
   onClose,
 }: UseMenuNavigationProps) => {
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isOpen) return
 
     const handleClick = (event: MouseEvent) => {
@@ -41,7 +41,7 @@ export const useMenuNavigation = ({
       event.stopPropagation()
 
       const currentFocusIndex = focusableElements.indexOf(
-        document.activeElement as Element,
+        document.activeElement as unknown as Element,
       )
 
       let nextFocusIndex: number
@@ -55,20 +55,26 @@ export const useMenuNavigation = ({
           focusableElements.length
       }
 
-      ;(focusableElements[nextFocusIndex] as HTMLElement)?.focus()
+      ;(focusableElements[nextFocusIndex] as HTMLElement | undefined)?.focus()
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
       switch (event.key) {
-        case 'Escape':
-          return handleEscape()
+        case 'Escape': {
+          handleEscape()
+          return
+        }
 
-        case 'Tab':
-          return handleTab()
+        case 'Tab': {
+          handleTab()
+          return
+        }
 
         case 'ArrowUp':
-        case 'ArrowDown':
-          return handleArrow(event)
+        case 'ArrowDown': {
+          handleArrow(event)
+          return
+        }
       }
     }
 

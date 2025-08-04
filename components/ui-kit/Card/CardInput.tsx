@@ -1,4 +1,4 @@
-import React from 'react'
+import { useCallback, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { Modify } from '../../../types/utility'
 import { CardItem, CardItemProps } from './CardItem'
@@ -20,15 +20,15 @@ export const CardInput = ({
   onChange,
   ...rest
 }: CardInputProps) => {
-  const [isEditing, setIsEditing] = React.useState(false)
-  const [inputValue, setInputValue] = React.useState('')
+  const [isEditing, setIsEditing] = useState(false)
+  const [inputValue, setInputValue] = useState('')
 
-  const handleClick = React.useCallback(() => {
+  const handleClick = useCallback(() => {
     setIsEditing(true)
     setInputValue(value)
   }, [value])
 
-  const handleKeyDown = React.useCallback((event: React.KeyboardEvent) => {
+  const handleKeyDown = useCallback((event: React.KeyboardEvent) => {
     switch (event.key) {
       case 'Enter':
         if (event.target instanceof HTMLInputElement) event.target.blur()
@@ -40,7 +40,7 @@ export const CardInput = ({
     }
   }, [])
 
-  const handleBlur = React.useCallback(
+  const handleBlur = useCallback(
     (event: React.FocusEvent) => {
       void (async () => {
         const currentTarget = event.currentTarget
@@ -55,14 +55,14 @@ export const CardInput = ({
     [inputValue, value, onChange],
   )
 
-  const handleInputChange = React.useCallback(
+  const handleInputChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setInputValue(event.target.value)
     },
     [],
   )
 
-  const handleInputFocus = React.useCallback(
+  const handleInputFocus = useCallback(
     (event: React.FocusEvent<HTMLInputElement>) => {
       event.currentTarget.select()
     },

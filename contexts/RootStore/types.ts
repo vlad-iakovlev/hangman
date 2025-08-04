@@ -1,10 +1,10 @@
 import { Word } from '../../types/word'
 
-export interface RootStoreState {
+export type RootStoreState = {
   words: Word[]
 }
 
-export interface BrowserStorageState {
+export type BrowserStorageState = {
   words: Word[]
 }
 

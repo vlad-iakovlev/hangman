@@ -1,4 +1,4 @@
-import React from 'react'
+import { useCallback, useMemo } from 'react'
 import { v4 as uuid } from 'uuid'
 import { useRootStore } from '../RootStore'
 import { WordsActionTypes } from '../types'
@@ -6,9 +6,9 @@ import { WordsActionTypes } from '../types'
 export const useWords = () => {
   const { state, dispatch } = useRootStore()
 
-  const words = React.useMemo(() => state.words, [state])
+  const words = useMemo(() => state.words, [state])
 
-  const createWord = React.useCallback(
+  const createWord = useCallback(
     ({ letters, word }: { letters: string; word: string }) => {
       const id = uuid()
 
@@ -22,7 +22,7 @@ export const useWords = () => {
     [dispatch],
   )
 
-  const resetWords = React.useCallback(() => {
+  const resetWords = useCallback(() => {
     dispatch({
       type: WordsActionTypes.RESET_WORDS,
     })
