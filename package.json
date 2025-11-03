@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@types/node": "^22.18.12",
+    "@types/node": "^22.19.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "focus-trap-react": "^11.0.4",
@@ -41,7 +41,7 @@
     "tailwindcss": "^4.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "^8.46.3"
   },
   "overrides": {
     "@eslint/config-helpers": "0.4.1",
