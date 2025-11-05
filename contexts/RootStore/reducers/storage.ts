@@ -25,17 +25,15 @@ export type StorageAction = Parameters<
 export const isStorageAction = (action: {
   type: string
   payload?: unknown
-}): action is StorageAction => {
-  return Object.values(StorageActionType).includes(
-    action.type as StorageActionType,
-  )
-}
+}): action is StorageAction =>
+  Object.values(StorageActionType).includes(action.type as StorageActionType)
 
 export const storageReducer: React.Reducer<RootStoreState, StorageAction> = (
   state,
   action,
 ) => {
   switch (action.type) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     case StorageActionType.SET_STATE_FROM_BROWSER_STORAGE:
       return setStateFromBrowserStorageReducer(state, action)
   }

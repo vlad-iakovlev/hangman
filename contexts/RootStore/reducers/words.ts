@@ -8,22 +8,20 @@ const createWordReducer: React.Reducer<
     type: WordsActionTypes.CREATE_WORD
     payload: Word
   }
-> = (state, { payload }) => {
-  return produce(state, (draft) => {
+> = (state, { payload }) =>
+  produce(state, (draft) => {
     draft.words.push(payload)
   })
-}
 
 const resetWordsReducer: React.Reducer<
   RootStoreState,
   {
     type: WordsActionTypes.RESET_WORDS
   }
-> = (state) => {
-  return produce(state, (draft) => {
+> = (state) =>
+  produce(state, (draft) => {
     draft.words = []
   })
-}
 
 export type WordsActions =
   | Parameters<typeof createWordReducer>[1]
@@ -32,11 +30,8 @@ export type WordsActions =
 export const isWordsAction = (action: {
   type: string
   payload?: unknown
-}): action is WordsActions => {
-  return Object.values(WordsActionTypes).includes(
-    action.type as WordsActionTypes,
-  )
-}
+}): action is WordsActions =>
+  Object.values(WordsActionTypes).includes(action.type as WordsActionTypes)
 
 export const wordsReducer: React.Reducer<RootStoreState, WordsActions> = (
   state,
