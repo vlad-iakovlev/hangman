@@ -20,7 +20,7 @@
     "@types/react-dom": "^19.2.3",
     "focus-trap-react": "^11.0.4",
     "framer-motion": "^12.23.26",
-    "immer": "^10.2.0",
+    "immer": "^11.1.0",
     "next": "^16.1.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
